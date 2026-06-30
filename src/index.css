@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #F9F7F2;
+  --color-ink: #2D2926;
+  --color-sage: #5A6B5D;
+  --color-taupe: #8E6D5A;
+  --color-cream: #FFFFFF;
+  --color-gold: #C5A059;
+
+  --color-emerald-50: #F3F5F3;
+  --color-emerald-100: #E6ECE7;
+  --color-emerald-200: #CDDCD0;
+  --color-emerald-300: #A8C2AC;
+  --color-emerald-400: #82A486;
+  --color-emerald-500: #5A6B5D; /* sage */
+  --color-emerald-600: #4B594D;
+  --color-emerald-700: #3D483F;
+  --color-emerald-800: #5A6B5D; /* sage brand */
+  --color-emerald-900: #2D2926; /* ink */
+  --color-emerald-950: #1C211D;
+  
+  --color-stone-50: #F9F7F2; /* paper background */
+  --color-stone-100: #ECE9E2; /* subtle cream border/surface */
+  --color-stone-150: #E5E1D8;
+  --color-stone-200: #DCD7CD;
+  --color-stone-300: #C7C0B3;
+  --color-stone-400: #8E6D5A; /* taupe */
+  --color-stone-500: #6B655C;
+  --color-stone-600: #5C564D;
+  --color-stone-700: #4A453E;
+  --color-stone-800: #2D2926; /* ink */
+  --color-stone-900: #1D1A18;
+  
+  --color-amber-50: #FAF6ED;
+  --color-amber-100: #F3E7CD;
+  --color-amber-500: #C5A059; /* gold */
+  --color-amber-600: #9B7E45;
+  --color-amber-700: #8E6D5A; /* taupe */
+
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Playfair Display", "Georgia", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Base resets & typography matching Sleek Interface */
+html, body {
+  background-color: #F9F7F2;
+  color: #2D2926;
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: "Playfair Display", "Georgia", serif;
+}
+
+/* Custom micro-animations for route/page transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.bg-emerald-850 {
+  background-color: #5A6B5D;
+}
+
+.hover\:bg-emerald-850:hover {
+  background-color: #4B594D;
+}
+
+.text-emerald-850 {
+  color: #5A6B5D;
+}
+

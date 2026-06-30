@@ -1,0 +1,6 @@
+{
+  "name": "Purely Diya",
+  "description": "Premium organic and natural skincare beauty platform featuring personalized product recommendations, a rich catalog, checkout, and an AI Beauty Assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

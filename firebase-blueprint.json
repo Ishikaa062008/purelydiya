@@ -1,0 +1,145 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User account information and skin profile details",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "skinType": { "type": "string" },
+        "concerns": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Beauty and skincare product details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "price": { "type": "number" },
+        "description": { "type": "string" },
+        "benefits": { "type": "array" },
+        "ingredients": { "type": "array" },
+        "usage": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviewsCount": { "type": "number" },
+        "skinTypes": { "type": "array" },
+        "concerns": { "type": "array" },
+        "stock": { "type": "number" }
+      },
+      "required": ["id", "name", "category", "price", "description", "imageUrl", "stock"]
+    },
+    "WishlistItem": {
+      "title": "Wishlist Item",
+      "description": "Product saved in user's wishlist",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "productId": { "type": "string" },
+        "addedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "productId"]
+    },
+    "CartItem": {
+      "title": "Cart Item",
+      "description": "Product added to user's shopping cart",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "productId": { "type": "string" },
+        "quantity": { "type": "number" },
+        "addedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "productId", "quantity"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Order placed by user",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "items": { "type": "array" },
+        "totalAmount": { "type": "number" },
+        "discountAmount": { "type": "number" },
+        "couponCode": { "type": "string" },
+        "status": { "type": "string" },
+        "shippingAddress": { "type": "object" },
+        "paymentMethod": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "trackingNumber": { "type": "string" }
+      },
+      "required": ["id", "userId", "items", "totalAmount", "status", "shippingAddress", "paymentMethod", "createdAt"]
+    },
+    "Review": {
+      "title": "Review",
+      "description": "Review written by user for a product",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "productId", "userId", "userName", "rating", "comment", "createdAt"]
+    },
+    "Blog": {
+      "title": "Blog",
+      "description": "Skincare blog or recipe tutorial",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "category": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "author": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "title", "content", "category", "author", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "#/entities/User",
+      "description": "User Profiles"
+    },
+    "/products/{productId}": {
+      "schema": "#/entities/Product",
+      "description": "Store Products"
+    },
+    "/wishlist/{wishlistId}": {
+      "schema": "#/entities/WishlistItem",
+      "description": "User Wishlist Items"
+    },
+    "/cart/{cartId}": {
+      "schema": "#/entities/CartItem",
+      "description": "User Cart Items"
+    },
+    "/orders/{orderId}": {
+      "schema": "#/entities/Order",
+      "description": "Customer Orders"
+    },
+    "/reviews/{reviewId}": {
+      "schema": "#/entities/Review",
+      "description": "Product Reviews"
+    },
+    "/blogs/{blogId}": {
+      "schema": "#/entities/Blog",
+      "description": "Skincare Educational Blogs"
+    }
+  }
+}
